@@ -1,6 +1,7 @@
-require 'sinatra'
+require "sinatra"
+require "slim"
 
-get '/' do
-  'Hello world!'
+get "/" do
+  slim :index
 end
 

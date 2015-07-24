@@ -4,6 +4,7 @@ ruby "2.2.2"
 
 gem "thin"
 gem "sinatra"
+gem "slim"
 
 group :development do
   gem "foreman"
