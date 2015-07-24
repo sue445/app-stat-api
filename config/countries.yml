@@ -1,0 +1,226 @@
+- code: bh
+  name: Bahrain
+- code: bw
+  name: Botswana
+- code: cm
+  name: Cameroun
+- code: ci
+  name: Côte d’Ivoire
+- code: gw
+  name: Guinea-Bissau
+- code: eg
+  name: Egypt
+- code: gq
+  name: Guinée Equatoriale
+- code: in
+  name: India
+- code: il
+  name: Israel
+- code: jo
+  name: Jordan
+- code: ke
+  name: Kenya
+- code: lb
+  name: Lebanon
+- code: mg
+  name: Madagascar
+- code: ml
+  name: Mali
+- code: ma
+  name: Maroc
+- code: mu
+  name: Mauritius
+- code: ne
+  name: Niger
+- code: ng
+  name: Nigeria
+- code: om
+  name: Oman
+- code: qa
+  name: Qatar
+- code: cf
+  name: République centrafricaine
+- code: sn
+  name: Sénégal
+- code: za
+  name: South Africa
+- code: tn
+  name: Tunisie
+- code: ae
+  name: United Arab Emirates
+- code: bn
+  name: Brunei Darussalam
+- code: cn
+  name: 中国
+- code: gu
+  name: Guam
+- code: hk/en
+  name: Hong Kong
+- code: hk
+  name: 香港
+- code: jp
+  name: 日本
+- code: kr
+  name: 대한민국
+- code: mo/en
+  name: Macau
+- code: mo
+  name: 澳門
+- code: my
+  name: Malaysia
+- code: nz
+  name: New Zealand
+- code: ph
+  name: Philippines
+- code: sg
+  name: Singapore
+- code: lk
+  name: Sri Lanka
+- code: tw
+  name: 台灣
+- code: vn
+  name: Vietnam
+- code: asia
+  name: Other Asia
+- code: am
+  name: Armenia
+- code: benl
+  name: België
+- code: befr
+  name: Belgique
+- code: bg
+  name: България
+- code: cy
+  name: Cyprus
+- code: dk
+  name: Danmark
+- code: de
+  name: Deutschland
+- code: ee
+  name: Eesti
+- code: es
+  name: España
+- code: fr
+  name: France
+- code: hr
+  name: Hrvatska
+- code: is
+  name: Iceland
+- code: ie
+  name: Ireland
+- code: it
+  name: Italia
+- code: lv
+  name: Latvija
+- code: lt
+  name: Lietuva
+- code: lu
+  name: Luxembourg (English)
+- code: lu
+  name: Luxembourg (Français)
+- code: lu
+  name: Luxemburg (Deutsch)
+- code: mk
+  name: Macedonia
+- code: mt
+  name: Malta
+- code: md
+  name: Moldova
+- code: me
+  name: Montenegro
+- code: nl
+  name: Nederland
+- code: no
+  name: Norge
+- code: pl
+  name: Polska
+- code: pt
+  name: Portugal
+- code: ro
+  name: România
+- code: ru
+  name: Россия
+- code: sk
+  name: Slovensko
+- code: chde
+  name: Schweiz
+- code: chfr
+  name: Suisse
+- code: fi
+  name: Suomi
+- code: se
+  name: Sverige
+- code: uk
+  name: UK
+- code: lae
+  name: Antigua & Barbuda
+- code: la
+  name: Argentina
+- code: lae
+  name: Barbados
+- code: lae
+  name: Belize
+- code: lae
+  name: Bermuda
+- code: br
+  name: Brasil
+- code: lae
+  name: British Virgin Islands
+- code: lae
+  name: Cayman Islands
+- code: la
+  name: Chile
+- code: la
+  name: Colombia
+- code: lae
+  name: Dominica
+- code: la
+  name: República Dominicana
+- code: la
+  name: Ecuador
+- code: la
+  name: El Salvador
+- code: lae
+  name: Grenada
+- code: lae
+  name: Guyana
+- code: la
+  name: Honduras
+- code: lae
+  name: Jamaica
+- code: mx
+  name: México
+- code: lae
+  name: Montserrat
+- code: la
+  name: Panamá
+- code: la
+  name: Paraguay
+- code: la
+  name: Perú
+- code: lae
+  name: St.Kitts & Nevis
+- code: lae
+  name: St.Lucia
+- code: lae
+  name: Suriname
+- code: lae
+  name: The Bahamas
+- code: lae
+  name: Trinidad & Tobago
+- code: lae
+  name: Turks & Caicos
+- code: la
+  name: Uruguay
+- code: la
+  name: América Latina y el Caribe
+- code: lae
+  name: Latin America and the Caribbean
+- code: ca/fr
+  name: Canada (Français)
+- code: lae
+  name: Puerto Rico (English)
+- code: la
+  name: Puerto Rico (español)
+- code:
+  name: United States
