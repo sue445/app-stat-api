@@ -1,0 +1,14 @@
+h1 = @title
+
+table.table.table-striped.table-hover
+  thead
+    tr
+      th title
+      th status
+      th description
+  tbody
+    - @statuses.each do |status|
+      tr
+        td = status[:title]
+        td = status[:status]
+        td = status[:description]

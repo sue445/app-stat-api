@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.2.2"
 
 gem "activesupport"
+gem "apple_system_status"
 gem "thin"
 gem "sinatra"
 gem "slim"
