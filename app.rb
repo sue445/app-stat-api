@@ -11,22 +11,21 @@ def load_countries
 end
 
 def fetch_apple_system_status(country)
-  key = country.presence || "us"
   cache = cache_client
 
-  cached_status = cache.get(key)
+  cached_status = cache.get(country)
   return cached_status if cached_status
 
   system_status = AppleSystemStatus::Crawler.new.perform(country)
-  cache.set(key, system_status)
+  cache.set(country, system_status)
   system_status
 end
 
 def apple_system_status(country, title)
-  system_status = fetch_apple_system_status(country)
+  system_status = fetch_apple_system_status(country: country)
   return system_status if title.blank?
 
-  system_status[:statuses] = system_status[:statuses].select { |status| status[:title] == title }
+  system_status[:services] = system_status[:services].select { |service| service[:title] == title }
   system_status
 end
 
@@ -43,7 +42,7 @@ end
 get "/status" do
   system_status = apple_system_status(params[:country], params[:title])
   @title = system_status[:title]
-  @statuses = system_status[:statuses]
+  @services = system_status[:services]
 
   slim :status
 end

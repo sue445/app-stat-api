@@ -1,6 +1,6 @@
 h1 = @title
 
-- if params[:country].blank?
+- if params[:country] == "us"
   a.btn.btn-default role="button" href="https://www.apple.com/support/systemstatus/" Original Source (Apple)
 - else
   a.btn.btn-default role="button" href="https://www.apple.com/#{params[:country]}/support/systemstatus/" Original Source (Apple)
@@ -14,10 +14,10 @@ table.table.table-striped.table-hover
       th status
       th description
   tbody
-    - @statuses.each do |status|
+    - @services.each do |service|
       tr
         td
-          a href="/status?country=#{params[:country]}&title=#{status[:title]}"
-            = status[:title]
-        td = status[:status]
-        td = status[:description]
+          a href="/status?country=#{params[:country]}&title=#{service[:title]}"
+            = service[:title]
+        td = service[:status]
+        td = service[:description]
