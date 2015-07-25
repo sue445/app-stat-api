@@ -7,6 +7,7 @@ gem "apple_system_status"
 gem "dalli"
 gem "thin"
 gem "sinatra"
+gem "sinatra-contrib"
 gem "slim"
 
 group :development do

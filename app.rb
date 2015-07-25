@@ -1,4 +1,5 @@
 require "sinatra"
+require "sinatra/json"
 require "slim"
 require "yaml"
 require "active_support/all"
@@ -45,4 +46,9 @@ get "/status" do
   @statuses = system_status[:statuses]
 
   slim :status
+end
+
+get "/status.json" do
+  system_status = apple_system_status(params[:country], params[:title])
+  json system_status
 end
