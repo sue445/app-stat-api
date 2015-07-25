@@ -21,6 +21,14 @@ def fetch_apple_system_status(country)
   system_status
 end
 
+def apple_system_status(country, title)
+  system_status = fetch_apple_system_status(country)
+  return system_status if title.blank?
+
+  system_status[:statuses] = system_status[:statuses].select { |status| status[:title] == title }
+  system_status
+end
+
 def cache_client
   # TODO: heroku memcached
   Dalli::Client.new("localhost:11211", namespace: "apple_system_status", compress: true, expires_in: 5.minutes)
@@ -32,7 +40,7 @@ get "/" do
 end
 
 get "/status" do
-  system_status = fetch_apple_system_status(params[:country])
+  system_status = apple_system_status(params[:country], params[:title])
   @title = system_status[:title]
   @statuses = system_status[:statuses]
 

@@ -9,6 +9,8 @@ table.table.table-striped.table-hover
   tbody
     - @statuses.each do |status|
       tr
-        td = status[:title]
+        td
+          a href="/status?country=#{params[:country]}&title=#{status[:title]}"
+            = status[:title]
         td = status[:status]
         td = status[:description]
