@@ -3,13 +3,27 @@ require "slim"
 require "yaml"
 require "active_support/all"
 require "apple_system_status"
+require "dalli"
 
 def load_countries
   YAML.load_file("#{__dir__}/config/countries.yml").map(&:with_indifferent_access).sort_by { |c| c[:name] }
 end
 
 def fetch_apple_system_status(country)
-  AppleSystemStatus::Crawler.new.perform(country)
+  key = country.presence || "us"
+  cache = cache_client
+
+  cached_status = cache.get(key)
+  return cached_status if cached_status
+
+  system_status = AppleSystemStatus::Crawler.new.perform(country)
+  cache.set(key, system_status)
+  system_status
+end
+
+def cache_client
+  # TODO: heroku memcached
+  Dalli::Client.new("localhost:11211", namespace: "apple_system_status", compress: true, expires_in: 5.minutes)
 end
 
 get "/" do
