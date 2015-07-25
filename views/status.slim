@@ -1,5 +1,10 @@
 h1 = @title
 
+- if params[:country].blank?
+  a.btn.btn-default role="button" href="https://www.apple.com/support/systemstatus/" Original Source (Apple)
+- else
+  a.btn.btn-default role="button" href="https://www.apple.com/#{params[:country]}/support/systemstatus/" Original Source (Apple)
+
 a.btn.btn-default role="button" href="/status.json?country=#{params[:country]}&title=#{params[:title]}" json
 
 table.table.table-striped.table-hover
