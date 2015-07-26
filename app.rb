@@ -25,7 +25,7 @@ def apple_system_status(country, title)
   system_status = fetch_apple_system_status(country)
   return system_status if title.blank?
 
-  system_status[:services] = system_status[:services].select { |service| service[:title] == title }
+  system_status[:services].select! { |service| service[:title] == title }
   system_status
 end
 
