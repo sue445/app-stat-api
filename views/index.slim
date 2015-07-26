@@ -3,5 +3,5 @@ h1 AppleSystemStatus
 ul
   - @countries.each do |country|
     li
-      a href="/status?country=#{country[:code]}"
+      a href="/#{country[:code]}/services"
         = country[:name]

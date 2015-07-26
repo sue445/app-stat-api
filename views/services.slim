@@ -5,7 +5,7 @@ h1 = @title
 - else
   a.btn.btn-default role="button" href="https://www.apple.com/#{params[:country]}/support/systemstatus/" Original Source (Apple)
 
-a.btn.btn-default role="button" href="/status.json?country=#{params[:country]}&title=#{params[:title]}" json
+a.btn.btn-default role="button" href="/#{params[:country]}/services.json?title=#{params[:title]}" json
 
 table.table.table-striped.table-hover
   thead
@@ -17,7 +17,7 @@ table.table.table-striped.table-hover
     - @services.each do |service|
       tr
         td
-          a href="/status?country=#{params[:country]}&title=#{service[:title]}"
+          a href="/#{params[:country]}/services?title=#{service[:title]}"
             = service[:title]
         td = service[:status]
         td = service[:description]

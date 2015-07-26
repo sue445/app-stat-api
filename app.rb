@@ -16,13 +16,13 @@ def fetch_apple_system_status(country)
   cached_status = cache.get(country)
   return cached_status if cached_status
 
-  system_status = AppleSystemStatus::Crawler.new.perform(country)
+  system_status = AppleSystemStatus::Crawler.new.perform(country: country)
   cache.set(country, system_status)
   system_status
 end
 
 def apple_system_status(country, title)
-  system_status = fetch_apple_system_status(country: country)
+  system_status = fetch_apple_system_status(country)
   return system_status if title.blank?
 
   system_status[:services] = system_status[:services].select { |service| service[:title] == title }
@@ -39,15 +39,15 @@ get "/" do
   slim :index
 end
 
-get "/status" do
+get "/:country/services.json" do
+  system_status = apple_system_status(params[:country], params[:title])
+  json system_status
+end
+
+get "/:country/services" do
   system_status = apple_system_status(params[:country], params[:title])
   @title = system_status[:title]
   @services = system_status[:services]
 
-  slim :status
-end
-
-get "/status.json" do
-  system_status = apple_system_status(params[:country], params[:title])
-  json system_status
+  slim :services
 end
