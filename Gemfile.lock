@@ -22,6 +22,7 @@ GEM
     cliver (0.3.2)
     daemons (1.2.3)
     dalli (2.7.4)
+    diff-lcs (1.2.5)
     eventmachine (1.0.7)
     foreman (0.78.0)
       thor (~> 0.19.1)
@@ -43,6 +44,19 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rspec (3.3.0)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+    rspec-core (3.3.2)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -81,6 +95,8 @@ DEPENDENCIES
   apple_system_status
   dalli
   foreman
+  rack-test
+  rspec
   sinatra
   sinatra-contrib
   slim
