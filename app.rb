@@ -22,7 +22,7 @@ helpers do
     system_status
   end
 
-  def apple_system_status(country, title)
+  def find_apple_system_status(country, title)
     system_status = fetch_apple_system_status(country)
     return system_status if title.blank?
 
@@ -48,12 +48,12 @@ get "/" do
 end
 
 get "/:country/services.json" do
-  system_status = apple_system_status(params[:country], params[:title])
+  system_status = find_apple_system_status(params[:country], params[:title])
   json system_status
 end
 
 get "/:country/services" do
-  system_status = apple_system_status(params[:country], params[:title])
+  system_status = find_apple_system_status(params[:country], params[:title])
   @title = system_status[:title]
   @services = system_status[:services]
 
