@@ -10,6 +10,7 @@ machine:
   environment:
     COVERAGE: true
     RACK_ENV: test
+    CODECLIMATE_REPO_TOKEN: d7a640415d0028f0471153191bb4ab3e0f0fea34545e99f1c4f5532f7772f006
 
 ## Customize dependencies
 #dependencies:
@@ -18,4 +19,3 @@ machine:
 test:
   override:
     - bundle exec rspec
-
