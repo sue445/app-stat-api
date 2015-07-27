@@ -59,3 +59,9 @@ get "/:country/services" do
 
   slim :services
 end
+
+before "/:country/services*" do
+  unless load_countries.any? { |c| params[:country] == c[:code] }
+    halt 404, "Not found"
+  end
+end
