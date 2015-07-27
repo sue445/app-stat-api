@@ -1,0 +1,21 @@
+# https://circleci.com/docs/config-sample
+machine:
+  ruby:
+    version: 2.2.2
+
+  services:
+    - memcached
+
+  # Add some environment variables
+  environment:
+    COVERAGE: true
+    RACK_ENV: test
+
+## Customize dependencies
+#dependencies:
+
+## Customize test commands
+test:
+  override:
+    - bundle exec rspec
+
