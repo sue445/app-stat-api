@@ -35,9 +35,13 @@ helpers do
     Dalli::Client.new("localhost:11211", namespace: "apple_system_status", compress: true, expires_in: 5.minutes)
   end
 
-  def service_path(country, format = :html)
+  def service_path(country, args = {})
+    format = args.delete(:format)
+
     path = "/#{country}/services"
     path << ".json" if format == :json
+    path << "?" + args.to_query unless args.values.reject(&:blank?).empty?
+
     path
   end
 end
