@@ -12,6 +12,7 @@ gem "slim"
 
 group :development do
   gem "foreman"
+  gem "rubocop", "0.31.0", require: nil
 end
 
 group :test do
