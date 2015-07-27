@@ -20,9 +20,12 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     cliver (0.3.2)
+    codeclimate-test-reporter (0.4.7)
+      simplecov (>= 0.7.1, < 1.0.0)
     daemons (1.2.3)
     dalli (2.7.4)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     eventmachine (1.0.7)
     foreman (0.78.0)
       thor (~> 0.19.1)
@@ -57,6 +60,11 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -93,6 +101,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   apple_system_status
+  codeclimate-test-reporter
   dalli
   foreman
   rack-test
