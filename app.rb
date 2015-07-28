@@ -5,17 +5,7 @@ require "yaml"
 require "active_support/all"
 require "apple_system_status"
 require "dalli"
-require "rollbar"
 require "rollbar/middleware/sinatra"
-
-Rollbar.configure do |config|
-  config.access_token = ENV["ROLLBAR_ACCESS_TOKEN"]
-  config.enabled      = ENV["ROLLBAR_ACCESS_TOKEN"].present?
-
-  config.exception_level_filters.merge!(
-    "Sinatra::NotFound" => "ignore",
-  )
-end
 
 class App < Sinatra::Base
   use Rollbar::Middleware::Sinatra
