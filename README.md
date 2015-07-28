@@ -29,10 +29,11 @@ open http://localhost:3000/
 heroku addons:create papertrail
 heroku addons:create rollbar
 heroku addons:create memcachedcloud
+heroku addons:create newrelic
 heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXX
+heroku config:add NEW_RELIC_LICENSE_KEY=XXXXXXXXXXXXXXXX
 ```
 
 ## ProTip
 core logic is [apple_system_status](https://github.com/sue445/apple_system_status)
-
