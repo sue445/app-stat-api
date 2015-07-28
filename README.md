@@ -11,7 +11,7 @@ https://app-stat-api.herokuapp.com/
 ## Requirements
 * Ruby 2.2.2
 * [memcached](http://memcached.org/)
-* [Phantomjs](http://phantomjs.org/)
+* [Phantomjs](http://phantomjs.org/) (recommended v1.9.8+)
 
 ## Setup
 ```sh
