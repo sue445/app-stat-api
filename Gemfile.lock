@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    apple_system_status (0.1.0.beta3)
+    apple_system_status (0.1.0)
       activesupport
       capybara
       poltergeist
