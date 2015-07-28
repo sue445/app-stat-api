@@ -19,3 +19,9 @@ machine:
 test:
   override:
     - bundle exec rspec
+
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: app-stat-api

@@ -5,10 +5,11 @@ ruby "2.2.2"
 gem "activesupport"
 gem "apple_system_status"
 gem "dalli"
-gem "thin"
+gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "slim"
+gem "thin"
 
 group :development do
   gem "foreman"

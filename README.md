@@ -1,5 +1,5 @@
 # AppStatApi
-[![Circle CI](https://circleci.com/gh/sue445/app_stat_api/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/app_stat_api/tree/master)
+[![Circle CI](https://circleci.com/gh/sue445/app-stat-api/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/app-stat-api/tree/master)
 [![Dependency Status](https://gemnasium.com/sue445/app_stat_api.svg)](https://gemnasium.com/sue445/app_stat_api)
 [![Code Climate](https://codeclimate.com/github/sue445/app_stat_api/badges/gpa.svg)](https://codeclimate.com/github/sue445/app_stat_api)
 [![Test Coverage](https://codeclimate.com/github/sue445/app_stat_api/badges/coverage.svg)](https://codeclimate.com/github/sue445/app_stat_api/coverage)
@@ -17,4 +17,13 @@ bundle install
 ## Run
 ```sh
 bundle exec foreman s
+```
+
+## Setup Heroku
+```sh
+heroku addons:create papertrail
+heroku addons:create rollbar
+heroku addons:create memcachedcloud
+heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git
+heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXX
 ```
