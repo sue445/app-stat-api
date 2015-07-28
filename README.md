@@ -35,5 +35,8 @@ heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXX
 heroku config:add NEW_RELIC_LICENSE_KEY=XXXXXXXXXXXXXXXX
 ```
 
+### Deploy your Heroku account
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## ProTip
 core logic is [apple_system_status](https://github.com/sue445/apple_system_status)
