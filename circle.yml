@@ -10,7 +10,7 @@ machine:
   environment:
     COVERAGE: true
     RACK_ENV: test
-    CODECLIMATE_REPO_TOKEN: d7a640415d0028f0471153191bb4ab3e0f0fea34545e99f1c4f5532f7772f006
+    CODECLIMATE_REPO_TOKEN: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
 
 ## Customize dependencies
 #dependencies:
