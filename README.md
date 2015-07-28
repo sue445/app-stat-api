@@ -1,4 +1,8 @@
 # AppStatApi
+[Apple System Status](https://www.apple.com/support/systemstatus/) UnOfficial API
+    
+https://app-stat-api.herokuapp.com/
+
 [![Circle CI](https://circleci.com/gh/sue445/app-stat-api/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/app-stat-api/tree/master)
 [![Dependency Status](https://gemnasium.com/sue445/app-stat-api.svg)](https://gemnasium.com/sue445/app-stat-api)
 [![Code Climate](https://codeclimate.com/github/sue445/app-stat-api/badges/gpa.svg)](https://codeclimate.com/github/sue445/app-stat-api)
@@ -17,6 +21,7 @@ bundle install
 ## Run
 ```sh
 bundle exec foreman s
+open http://localhost:3000/
 ```
 
 ## Setup Heroku
@@ -27,3 +32,7 @@ heroku addons:create memcachedcloud
 heroku config:add BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-multi.git
 heroku config:add ROLLBAR_ACCESS_TOKEN=XXXXXXXXXXXXXXX
 ```
+
+## ProTip
+core logic is [apple_system_status](https://github.com/sue445/apple_system_status)
+
