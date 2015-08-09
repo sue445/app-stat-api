@@ -24,6 +24,7 @@ end
 
 require "rspec"
 require "rack/test"
+require "rspec-parameterized"
 require_relative "../app"
 
 ENV["RACK_ENV"] = "test"
@@ -109,4 +110,12 @@ end
 
 def app
   App
+end
+
+def spec_dir
+  Pathname(__dir__)
+end
+
+def app_dir
+  Pathname("#{__dir__}/..")
 end

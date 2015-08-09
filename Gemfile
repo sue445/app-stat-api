@@ -21,4 +21,5 @@ group :test do
   gem "codeclimate-test-reporter", require: nil
   gem "rack-test"
   gem "rspec"
+  gem "rspec-parameterized"
 end
