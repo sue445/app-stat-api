@@ -1,59 +1,5 @@
-- code: bh
-  name: Bahrain
-- code: bw
-  name: Botswana
-- code: cm
-  name: Cameroun
-- code: ci
-  name: Côte d’Ivoire
-- code: gw
-  name: Guinea-Bissau
-- code: eg
-  name: Egypt
-- code: gq
-  name: Guinée Equatoriale
-- code: in
-  name: India
-- code: il
-  name: Israel
-- code: jo
-  name: Jordan
-- code: ke
-  name: Kenya
-- code: lb
-  name: Lebanon
-- code: mg
-  name: Madagascar
-- code: ml
-  name: Mali
-- code: ma
-  name: Maroc
-- code: mu
-  name: Mauritius
-- code: ne
-  name: Niger
-- code: ng
-  name: Nigeria
-- code: om
-  name: Oman
-- code: qa
-  name: Qatar
-- code: cf
-  name: République centrafricaine
-- code: sn
-  name: Sénégal
-- code: za
-  name: South Africa
-- code: tn
-  name: Tunisie
-- code: ae
-  name: United Arab Emirates
-- code: bn
-  name: Brunei Darussalam
 - code: cn
   name: 中国
-- code: gu
-  name: Guam
 - code: hk/en
   name: Hong Kong
 - code: hk
@@ -62,86 +8,38 @@
   name: 日本
 - code: kr
   name: 대한민국
-- code: mo/en
-  name: Macau
-- code: mo
-  name: 澳門
-- code: my
-  name: Malaysia
 - code: nz
   name: New Zealand
-- code: ph
-  name: Philippines
-- code: sg
-  name: Singapore
-- code: lk
-  name: Sri Lanka
 - code: tw
   name: 台灣
-- code: vn
-  name: Vietnam
 - code: asia
   name: Other Asia
-- code: am
-  name: Armenia
 - code: benl
   name: België
 - code: befr
   name: Belgique
-- code: bg
-  name: България
-- code: cy
-  name: Cyprus
 - code: dk
   name: Danmark
 - code: de
   name: Deutschland
-- code: ee
-  name: Eesti
 - code: es
   name: España
 - code: fr
   name: France
-- code: hr
-  name: Hrvatska
-- code: is
-  name: Iceland
 - code: ie
   name: Ireland
 - code: it
   name: Italia
-- code: lv
-  name: Latvija
-- code: lt
-  name: Lietuva
-- code: lu
-  name: Luxembourg (English)
-- code: lu
-  name: Luxembourg (Français)
-- code: lu
-  name: Luxemburg (Deutsch)
-- code: mk
-  name: Macedonia
-- code: mt
-  name: Malta
-- code: md
-  name: Moldova
-- code: me
-  name: Montenegro
 - code: nl
   name: Nederland
-- code: no
+- code: "no"
   name: Norge
 - code: pl
   name: Polska
 - code: pt
   name: Portugal
-- code: ro
-  name: România
 - code: ru
   name: Россия
-- code: sk
-  name: Slovensko
 - code: chde
   name: Schweiz
 - code: chfr
