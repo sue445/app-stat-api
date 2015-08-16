@@ -42,10 +42,21 @@ class App < Sinatra::Base
     def fetch_apple_system_status(country)
       cache = cache_client
 
-      cached_status = cache.get(country)
-      return cached_status if cached_status
+      begin
+        cached_status = cache.get(country)
+        return cached_status if cached_status
+      rescue => e
+        Rollbar.warning(e)
+      end
 
       system_status = AppleSystemStatus::Crawler.new.perform(country: country)
+
+      begin
+        cache.set(country, system_status)
+      rescue => e
+        Rollbar.warning(e)
+      end
+
       cache.set(country, system_status)
       system_status
     end
