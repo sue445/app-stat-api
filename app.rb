@@ -39,6 +39,14 @@ class App < Sinatra::Base
       YAML.load_file("#{__dir__}/config/countries.yml").map(&:with_indifferent_access).sort_by { |c| c[:name] }
     end
 
+    def find_apple_system_status(country, title)
+      system_status = fetch_apple_system_status(country)
+      return system_status if title.blank?
+
+      system_status[:services].select! { |service| service[:title] == title }
+      system_status
+    end
+
     def fetch_apple_system_status(country)
       cache = cache_client
 
@@ -57,14 +65,6 @@ class App < Sinatra::Base
         Rollbar.warning(e)
       end
 
-      system_status
-    end
-
-    def find_apple_system_status(country, title)
-      system_status = fetch_apple_system_status(country)
-      return system_status if title.blank?
-
-      system_status[:services].select! { |service| service[:title] == title }
       system_status
     end
 
