@@ -48,24 +48,32 @@ class App < Sinatra::Base
     end
 
     def fetch_apple_system_status(country)
+      fetch_cache(country) do
+        AppleSystemStatus::Crawler.new.perform(country: country)
+      end
+    end
+
+    def fetch_cache(key)
       cache = cache_client
 
       begin
-        cached_status = cache.get(country)
-        return cached_status if cached_status
+        cached_response = cache.get(key)
+        return cached_response if cached_response
       rescue => e
+        logger.warn(e)
         Rollbar.warning(e)
       end
 
-      system_status = AppleSystemStatus::Crawler.new.perform(country: country)
+      response = yield
 
       begin
-        cache.set(country, system_status)
+        cache.set(key, response)
       rescue => e
+        logger.warn(e)
         Rollbar.warning(e)
       end
 
-      system_status
+      response
     end
 
     def cache_client
@@ -89,6 +97,10 @@ class App < Sinatra::Base
       path << "?" + args.to_query unless args.values.reject(&:blank?).empty?
 
       path
+    end
+
+    def logger
+      @logger ||= Logger.new(STDOUT)
     end
   end
 end
