@@ -57,7 +57,6 @@ class App < Sinatra::Base
         Rollbar.warning(e)
       end
 
-      cache.set(country, system_status)
       system_status
     end
 
