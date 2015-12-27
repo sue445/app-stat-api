@@ -9,7 +9,7 @@ https://app-stat-api.herokuapp.com/
 [![Test Coverage](https://codeclimate.com/github/sue445/app-stat-api/badges/coverage.svg)](https://codeclimate.com/github/sue445/app-stat-api/coverage)
 
 ## Requirements
-* Ruby 2.2.2
+* Ruby 2.3.0
 * [memcached](http://memcached.org/)
 * [Phantomjs](http://phantomjs.org/) (recommended v1.9.8+)
 
