@@ -1,6 +1,6 @@
 # AppStatApi
 [Apple System Status](https://www.apple.com/support/systemstatus/) UnOfficial API
-    
+
 https://app-stat-api.herokuapp.com/
 
 [![Circle CI](https://circleci.com/gh/sue445/app-stat-api/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/app-stat-api/tree/master)
@@ -9,7 +9,7 @@ https://app-stat-api.herokuapp.com/
 [![Test Coverage](https://codeclimate.com/github/sue445/app-stat-api/badges/coverage.svg)](https://codeclimate.com/github/sue445/app-stat-api/coverage)
 
 ## Requirements
-* Ruby 2.3.0
+* Ruby 2.3.1
 * [memcached](http://memcached.org/)
 * [Phantomjs](http://phantomjs.org/) (recommended v1.9.8+)
 
