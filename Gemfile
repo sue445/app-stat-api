@@ -5,12 +5,13 @@ ruby "2.3.1"
 gem "activesupport"
 gem "apple_system_status"
 gem "dalli"
+gem "jemalloc", require: false
 gem "newrelic_rpm"
+gem "puma"
 gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"
 gem "slim"
-gem "thin"
 
 group :development do
   gem "foreman"
