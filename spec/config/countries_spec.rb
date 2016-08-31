@@ -2,7 +2,7 @@ require "uri/https"
 
 describe "config/countries.yml" do
   where(:country) do
-    YAML.load_file("#{app_dir}/config/countries.yml").map{ |c| c["code"] }.reject { |code| code == "us" }.product
+    YAML.load_file("#{app_dir}/config/countries.yml").map { |c| c["code"] }.reject { |code| code == "us" }.product
   end
 
   with_them do

@@ -81,8 +81,9 @@ class App < Sinatra::Base
 
       if ENV["MEMCACHEDCLOUD_SERVERS"]
         # Heroku
-        options.merge!(username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"])
-        Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(','), options)
+        options[:username] = ENV["MEMCACHEDCLOUD_USERNAME"]
+        options[:password] = ENV["MEMCACHEDCLOUD_PASSWORD"]
+        Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(","), options)
       else
         # localhost
         Dalli::Client.new("localhost:11211", options)
