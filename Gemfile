@@ -8,6 +8,7 @@ gem "dalli"
 gem "jemalloc", require: false
 gem "newrelic_rpm"
 gem "puma"
+gem "puma_worker_killer"
 gem "rollbar"
 gem "sinatra"
 gem "sinatra-contrib"

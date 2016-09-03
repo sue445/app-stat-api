@@ -42,6 +42,7 @@ GEM
     equalizer (0.0.11)
     foreman (0.82.0)
       thor (~> 0.19.1)
+    get_process_mem (0.2.1)
     i18n (0.7.0)
     ice_nine (0.11.2)
     jemalloc (1.0.1)
@@ -74,6 +75,9 @@ GEM
       unparser
     procto (0.0.3)
     puma (3.6.0)
+    puma_worker_killer (0.0.6)
+      get_process_mem (~> 0.2)
+      puma (>= 2.7, < 4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -161,6 +165,7 @@ DEPENDENCIES
   newrelic_rpm
   onkcop (= 0.42.0.1)
   puma
+  puma_worker_killer
   rack-test
   rollbar
   rspec
