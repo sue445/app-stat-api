@@ -117,6 +117,16 @@ environment ENV["RACK_ENV"] || "development"
 #   puts "Starting workers..."
 # end
 
+before_fork do
+  PumaWorkerKiller.config do |config|
+    config.ram           = 512 # mb
+    config.frequency     = 5    # seconds
+    config.percent_usage = 0.98
+    config.rolling_restart_frequency = 12 * 3600 # 12 hours in seconds
+  end
+  PumaWorkerKiller.start
+end
+
 # Code to run in a worker before it starts serving requests.
 #
 # This is called everytime a worker is to be started.
