@@ -79,6 +79,8 @@ class App < Sinatra::Base
     def cache_client
       options = { namespace: "apple_system_status", compress: true, expires_in: 5.minutes }
 
+      Dalli.logger.level = Logger::WARN
+
       if ENV["MEMCACHEDCLOUD_SERVERS"]
         # Heroku
         options[:username] = ENV["MEMCACHEDCLOUD_USERNAME"]
