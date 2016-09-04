@@ -16,11 +16,11 @@ gem "slim"
 
 group :development do
   gem "foreman"
-  gem "onkcop", "0.42.0.1", require: nil
+  gem "onkcop", "0.42.0.1", require: false
 end
 
 group :test do
-  gem "codeclimate-test-reporter", require: nil
+  gem "codeclimate-test-reporter", require: false
   gem "rack-test"
   gem "rspec"
   gem "rspec-parameterized"
