@@ -49,7 +49,7 @@ class App < Sinatra::Base
 
     def fetch_apple_system_status(country)
       fetch_cache(country) do
-        AppleSystemStatus::Crawler.new.perform(country: country)
+        AppleSystemStatus::Crawler.perform(country: country)
       end
     end
 
