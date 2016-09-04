@@ -11,7 +11,7 @@ GEM
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
     addressable (2.4.0)
-    apple_system_status (0.1.1)
+    apple_system_status (0.2.0)
       activesupport
       capybara
       poltergeist
