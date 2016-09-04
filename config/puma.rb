@@ -110,6 +110,7 @@ environment ENV["RACK_ENV"] || "development"
 # The default is "0".
 #
 # workers 2
+workers Integer(ENV["WEB_CONCURRENCY"] || 1)
 
 # Code to run immediately before the master starts workers.
 #
