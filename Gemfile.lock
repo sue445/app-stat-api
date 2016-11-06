@@ -28,8 +28,7 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     cliver (0.3.2)
-    codeclimate-test-reporter (0.6.0)
-      simplecov (>= 0.7.1, < 1.0.0)
+    codeclimate-test-reporter (1.0.0)
     coderay (1.1.1)
     concord (0.1.5)
       adamantium (~> 0.2.0)
@@ -168,9 +167,13 @@ DEPENDENCIES
   rollbar
   rspec
   rspec-parameterized
+  simplecov
   sinatra
   sinatra-contrib
   slim
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5

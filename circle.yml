@@ -19,6 +19,7 @@ machine:
 test:
   override:
     - bundle exec rspec
+    - bundle exec codeclimate-test-reporter
 
 deployment:
   production:

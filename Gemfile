@@ -24,4 +24,5 @@ group :test do
   gem "rack-test"
   gem "rspec"
   gem "rspec-parameterized"
+  gem "simplecov"
 end
