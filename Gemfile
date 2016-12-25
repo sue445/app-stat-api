@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.3.1"
+ruby "2.4.0"
 
 gem "activesupport"
 gem "apple_system_status"
@@ -10,8 +10,8 @@ gem "newrelic_rpm"
 gem "puma"
 gem "puma_worker_killer"
 gem "rollbar"
-gem "sinatra"
-gem "sinatra-contrib"
+gem "sinatra", "~> 2.0.0.beta2"
+gem "sinatra-contrib", "~> 2.0.0.beta2"
 gem "slim"
 
 group :development do
