@@ -16,7 +16,6 @@ gem "slim"
 
 group :development do
   gem "foreman"
-  gem "onkcop", "0.42.0.1", require: false
 end
 
 group :test do
