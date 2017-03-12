@@ -29,7 +29,7 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     cliver (0.3.2)
-    codeclimate-test-reporter (1.0.6)
+    codeclimate-test-reporter (1.0.7)
       simplecov
     coderay (1.1.1)
     concord (0.1.5)
@@ -72,7 +72,7 @@ GEM
       unparser
     procto (0.0.3)
     public_suffix (2.0.5)
-    puma (3.7.1)
+    puma (3.8.1)
     puma_worker_killer (0.0.7)
       get_process_mem (~> 0.2)
       puma (>= 2.7, < 4)
