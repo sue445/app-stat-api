@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.4.0"
+ruby "2.4.1"
 
 gem "activesupport"
 gem "apple_system_status"
