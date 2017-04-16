@@ -7,7 +7,8 @@ describe "config/countries.yml" do
 
   with_them do
     it "url is available" do
-      http = Net::HTTP.new("www.apple.com")
+      http = Net::HTTP.new("www.apple.com", 443)
+      http.use_ssl = true
       response = http.head("/#{country}/support/systemstatus/")
       expect(response.code).to eq "200"
     end
