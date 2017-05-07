@@ -10,8 +10,8 @@ gem "newrelic_rpm"
 gem "puma"
 gem "puma_worker_killer"
 gem "rollbar"
-gem "sinatra", "~> 2.0.0.beta2"
-gem "sinatra-contrib", "~> 2.0.0.beta2"
+gem "sinatra", ">= 2.0.0"
+gem "sinatra-contrib", ">= 2.0.0"
 gem "slim"
 
 group :development do

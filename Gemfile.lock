@@ -160,9 +160,12 @@ DEPENDENCIES
   rspec
   rspec-parameterized
   simplecov
-  sinatra (~> 2.0.0.beta2)
-  sinatra-contrib (~> 2.0.0.beta2)
+  sinatra (>= 2.0.0)
+  sinatra-contrib (>= 2.0.0)
   slim
 
+RUBY VERSION
+   ruby 2.4.1p111
+
 BUNDLED WITH
-   1.13.7
+   1.14.6
