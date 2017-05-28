@@ -36,8 +36,8 @@
   name: Norge
 - code: pl
   name: Polska
-- code: pt
-  name: Portugal
+#- code: pt
+#  name: Portugal
 - code: ru
   name: Россия
 - code: chde
