@@ -24,7 +24,6 @@ end
 
 require "rspec"
 require "rack/test"
-require "rspec-parameterized"
 require_relative "../app"
 
 ENV["RACK_ENV"] = "test"
