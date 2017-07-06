@@ -8,7 +8,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    apple_system_status (0.3.0)
+    apple_system_status (0.3.1)
       activesupport
       capybara
       poltergeist
@@ -125,6 +125,9 @@ DEPENDENCIES
   sinatra (>= 2.0.0)
   sinatra-contrib (>= 2.0.0)
   slim
+
+RUBY VERSION
+   ruby 2.4.1p111
 
 BUNDLED WITH
    1.14.6
