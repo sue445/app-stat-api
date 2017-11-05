@@ -1,10 +1,6 @@
-require "sinatra"
-require "sinatra/json"
-require "slim"
-require "yaml"
-require "active_support/all"
-require "apple_system_status"
-require "dalli"
+ENV["RACK_ENV"] ||= "development"
+Bundler.require(:default, ENV["RACK_ENV"])
+
 require "rollbar/middleware/sinatra"
 
 require_relative "./lib/cache_utils"

@@ -22,8 +22,8 @@ if ENV["COVERAGE"]
   SimpleCov.start
 end
 
-require "rspec"
-require "rack/test"
+Bundler.require(:default, :test)
+
 require_relative "../app"
 
 ENV["RACK_ENV"] = "test"
