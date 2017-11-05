@@ -1,11 +1,9 @@
-require "sinatra"
-require "sinatra/json"
-require "slim"
-require "yaml"
-require "active_support/all"
-require "apple_system_status"
-require "dalli"
+ENV["RACK_ENV"] ||= "development"
+Bundler.require(:default, ENV["RACK_ENV"])
+
 require "rollbar/middleware/sinatra"
+
+require_relative "./lib/cache_utils"
 
 class App < Sinatra::Base
   use Rollbar::Middleware::Sinatra
@@ -28,11 +26,20 @@ class App < Sinatra::Base
     slim :services
   end
 
+  before do
+    Global.configure do |config|
+      config.environment = ENV["RACK_ENV"]
+      config.config_directory = "#{__dir__}/config/global"
+    end
+  end
+
   before "/:country/services*" do
     unless load_countries.any? { |c| params[:country] == c[:code] }
       halt 404, "Not found"
     end
   end
+
+  helpers CacheUtils
 
   helpers do
     def load_countries
@@ -50,45 +57,6 @@ class App < Sinatra::Base
     def fetch_apple_system_status(country)
       fetch_cache(country) do
         AppleSystemStatus::Crawler.perform(country: country)
-      end
-    end
-
-    def fetch_cache(key)
-      cache = cache_client
-
-      begin
-        cached_response = cache.get(key)
-        return cached_response if cached_response
-      rescue => e
-        logger.warn(e)
-        Rollbar.warning(e)
-      end
-
-      response = yield
-
-      begin
-        cache.set(key, response)
-      rescue => e
-        logger.warn(e)
-        Rollbar.warning(e)
-      end
-
-      response
-    end
-
-    def cache_client
-      options = { namespace: "apple_system_status", compress: true, expires_in: 5.minutes }
-
-      Dalli.logger.level = Logger::WARN
-
-      if ENV["MEMCACHEDCLOUD_SERVERS"]
-        # Heroku
-        options[:username] = ENV["MEMCACHEDCLOUD_USERNAME"]
-        options[:password] = ENV["MEMCACHEDCLOUD_PASSWORD"]
-        Dalli::Client.new(ENV["MEMCACHEDCLOUD_SERVERS"].split(","), options)
-      else
-        # localhost
-        Dalli::Client.new("localhost:11211", options)
       end
     end
 
