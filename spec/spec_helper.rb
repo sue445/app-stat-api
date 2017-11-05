@@ -28,6 +28,11 @@ require_relative "../app"
 
 ENV["RACK_ENV"] = "test"
 
+Global.configure do |config|
+  config.environment = ENV["RACK_ENV"]
+  config.config_directory = "#{__dir__}/../config/global"
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -105,6 +110,10 @@ RSpec.configure do |config|
   #   Kernel.srand config.seed
 
   config.include Rack::Test::Methods
+
+  config.before do
+    CacheUtils.cache_client.flush_all
+  end
 end
 
 def app
