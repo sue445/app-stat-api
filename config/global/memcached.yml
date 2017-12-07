@@ -2,7 +2,7 @@ default:
   servers:
     - "<%= ENV.fetch('MEMCACHED_HOST', 'localhost') %>:11211"
   options:
-    namespace: "cure-mastodon-bots"
+    namespace: "app-stat-api"
     compress: true
     expires_in: <%= 1.second %>
 
