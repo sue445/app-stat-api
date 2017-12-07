@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - save_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - ~/app
 
@@ -25,11 +25,11 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           keys:
-            - v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
-            - v1-bundle-master
+            - v2-bundle-{{ .Environment.CIRCLE_BRANCH }}
+            - v2-bundle-master
       - run: bundle install --path vendor/bundle
       - run: bundle clean
       - save_cache:
@@ -42,9 +42,9 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
+          key: v2-bundle-{{ .Environment.CIRCLE_BRANCH }}
       - run: bundle --path vendor/bundle
       - run: bundle exec rspec
       - run: bundle exec codeclimate-test-reporter
@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
       - run: .circleci/heroku_setup.sh
       - add_ssh_keys:
           fingerprints:
