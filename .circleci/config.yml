@@ -2,13 +2,11 @@ version: 2.0
 
 default: &default
   docker:
-    - image: circleci/ruby:2.4.1-node
+    - image: drecom/ubuntu-ruby:2.4.1
       environment:
         RACK_ENV: test
-    - image: circleci/postgres:9.4.12-alpine
-      environment:
-        POSTGRES_USER: ubuntu
-        POSTGRES_DB: circle_test
+        CODECLIMATE_REPO_TOKEN: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
+    - image: memcached:1.5-alpine
   working_directory: ~/app
 
 jobs:
@@ -48,20 +46,8 @@ jobs:
       - restore_cache:
           key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
       - run: bundle --path vendor/bundle
-      - run: cp .circleci/database.yml config/database.yml
-      - run: bundle exec rake ar:migrate:reset
       - run: bundle exec rspec
-
-  rubocop:
-    <<: *default
-
-    steps:
-      - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-      - restore_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_BRANCH }}
-      - run: bundle --path vendor/bundle
-      - run: bundle exec rubocop
+      - run: bundle exec codeclimate-test-reporter
 
   deploy:
     <<: *default
@@ -72,10 +58,8 @@ jobs:
       - run: .circleci/heroku_setup.sh
       - add_ssh_keys:
           fingerprints:
-            - "a7:63:6a:b6:85:fc:f7:d3:1b:da:5a:bf:bf:dd:e1:97"
-      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy start"
+            - "9a:82:fa:fa:35:d4:ea:5f:c5:27:ae:ee:ad:e7:33:5b"
       - run: .circleci/heroku_deploy.sh
-      - run: .circleci/notify_to_slack.sh "Heroku Deploy" "Deploy successful"
 
 workflows:
   version: 2
@@ -89,13 +73,9 @@ workflows:
       - rspec:
           requires:
             - bundle_dependencies
-      - rubocop:
-          requires:
-            - bundle_dependencies
       - deploy:
           requires:
             - rspec
-            - rubocop
           filters:
             branches:
               only: master
