@@ -17,7 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-if ENV["COVERAGE"]
+if ENV["CI"]
   require "simplecov"
   SimpleCov.start
 end
