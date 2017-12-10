@@ -1,6 +1,6 @@
 require "uri/https"
 
-describe "config/countries.yml" do
+describe "config/countries.yml" do # rubocop:disable RSpec/DescribeClass
   countries = YAML.load_file("#{app_dir}/config/countries.yml").map { |c| c["code"] }.reject { |code| code == "us" }
 
   countries.each do |country|

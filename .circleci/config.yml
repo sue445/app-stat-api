@@ -49,6 +49,17 @@ jobs:
       - run: bundle exec rspec
       - run: bundle exec codeclimate-test-reporter
 
+  rubocop:
+    <<: *default
+
+    steps:
+      - restore_cache:
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v2-bundle-{{ .Environment.CIRCLE_BRANCH }}
+      - run: bundle --path vendor/bundle
+      - run: bundle exec rubocop
+
   deploy:
     <<: *default
 
@@ -73,9 +84,13 @@ workflows:
       - rspec:
           requires:
             - bundle_dependencies
+      - rubocop:
+          requires:
+            - bundle_dependencies
       - deploy:
           requires:
             - rspec
+            - rubocop
           filters:
             branches:
               only: master
