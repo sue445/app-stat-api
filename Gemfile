@@ -17,6 +17,7 @@ gem "slim"
 
 group :development do
   gem "foreman"
+  gem "onkcop"
 end
 
 group :test do
