@@ -16,8 +16,8 @@ gem "sinatra-contrib", ">= 2.0.0"
 gem "slim"
 
 group :development do
-  gem "foreman"
-  gem "onkcop"
+  gem "foreman", require: false
+  gem "onkcop", require: false
 end
 
 group :test do
