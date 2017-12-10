@@ -1,4 +1,4 @@
-describe "AppleSystemStatus" do
+describe App do
   describe "/" do
     subject do
       get "/"
