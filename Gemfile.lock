@@ -13,8 +13,8 @@ GEM
       capybara
       poltergeist
       thor
-    ast (2.3.0)
-    backports (3.11.0)
+    ast (2.4.0)
+    backports (3.11.1)
     capybara (2.17.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -40,11 +40,11 @@ GEM
     json (2.1.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.1)
     newrelic_rpm (4.7.1.340)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     onkcop (0.52.1.1)
       rubocop (~> 0.52.1)
@@ -82,7 +82,7 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
+    rspec-support (3.7.1)
     rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
