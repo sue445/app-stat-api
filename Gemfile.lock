@@ -59,6 +59,8 @@ GEM
     powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.2)
+    puma-heroku (1.0.0)
+      puma (~> 3.0)
     puma_worker_killer (0.1.0)
       get_process_mem (~> 0.2)
       puma (>= 2.7, < 4)
@@ -140,6 +142,7 @@ DEPENDENCIES
   newrelic_rpm
   onkcop
   puma
+  puma-heroku
   puma_worker_killer
   rack-test
   rollbar
@@ -149,5 +152,8 @@ DEPENDENCIES
   sinatra-contrib (>= 2.0.0)
   slim
 
+RUBY VERSION
+   ruby 2.5.0p0
+
 BUNDLED WITH
-   1.16.0
+   1.16.1

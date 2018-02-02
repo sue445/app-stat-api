@@ -9,6 +9,7 @@ gem "global"
 gem "jemalloc", require: false
 gem "newrelic_rpm"
 gem "puma"
+gem "puma-heroku"
 gem "puma_worker_killer"
 gem "rollbar"
 gem "sinatra", ">= 2.0.0"
