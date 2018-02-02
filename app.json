@@ -9,6 +9,16 @@
     "BUNDLE_WITHOUT": {
       "description": "bundle install --without <these>",
       "value": "test:development"
+    },
+    "MAX_THREADS": {
+      "description": "puma threads count",
+      "value": "5",
+      "required": false
+    },
+    "WEB_CONCURRENCY": {
+      "description": "puma workers count",
+      "value": "1",
+      "required": false
     }
   },
   "addons": [
