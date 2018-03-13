@@ -34,7 +34,7 @@ class App < Sinatra::Base
   end
 
   before "/:country/services*" do
-    unless load_countries.any? { |c| params[:country] == c[:code] }
+    unless load_countries.any? {|c| params[:country] == c[:code] }
       halt 404, "Not found"
     end
   end
@@ -43,14 +43,14 @@ class App < Sinatra::Base
 
   helpers do
     def load_countries
-      YAML.load_file("#{__dir__}/config/countries.yml").map(&:with_indifferent_access).sort_by { |c| c[:name] }
+      YAML.load_file("#{__dir__}/config/countries.yml").map(&:with_indifferent_access).sort_by {|c| c[:name] }
     end
 
     def find_apple_system_status(country, title)
       system_status = fetch_apple_system_status(country)
       return system_status if title.blank?
 
-      system_status[:services].select! { |service| service[:title] == title }
+      system_status[:services].select! {|service| service[:title] == title }
       system_status
     end
 
