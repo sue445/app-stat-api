@@ -14,14 +14,14 @@ GEM
       poltergeist
       thor
     ast (2.4.0)
-    backports (3.11.1)
-    capybara (2.18.0)
+    backports (3.11.3)
+    capybara (3.0.3)
       addressable
       mini_mime (>= 0.1.3)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (>= 2.0, < 4.0)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      xpath (~> 3.0)
     cliver (0.3.2)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
@@ -50,10 +50,10 @@ GEM
       rubocop (~> 0.53.0)
       rubocop-rspec (>= 1.24.0)
     parallel (1.12.1)
-    parser (2.5.0.4)
+    parser (2.5.1.0)
       ast (~> 2.4.0)
-    poltergeist (1.17.0)
-      capybara (~> 2.1)
+    poltergeist (1.18.0)
+      capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
@@ -64,10 +64,10 @@ GEM
     puma_worker_killer (0.1.0)
       get_process_mem (~> 0.2)
       puma (>= 2.7, < 4)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-protection (2.0.1)
       rack
-    rack-test (0.8.3)
+    rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
     rollbar (2.15.6)
@@ -92,7 +92,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    rubocop-rspec (1.24.0)
+    rubocop-rspec (1.25.1)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.9.0)
     simplecov (0.13.0)
@@ -121,7 +121,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    unicode-display_width (1.3.0)
+    unicode-display_width (1.3.2)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -151,6 +151,9 @@ DEPENDENCIES
   sinatra (>= 2.0.0)
   sinatra-contrib (>= 2.0.0)
   slim
+
+RUBY VERSION
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.1
