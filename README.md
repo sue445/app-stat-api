@@ -4,7 +4,6 @@
 https://app-stat-api.herokuapp.com/
 
 [![Circle CI](https://circleci.com/gh/sue445/app-stat-api/tree/master.svg?style=svg)](https://circleci.com/gh/sue445/app-stat-api/tree/master)
-[![Dependency Status](https://gemnasium.com/sue445/app-stat-api.svg)](https://gemnasium.com/sue445/app-stat-api)
 [![Code Climate](https://codeclimate.com/github/sue445/app-stat-api/badges/gpa.svg)](https://codeclimate.com/github/sue445/app-stat-api)
 [![Test Coverage](https://codeclimate.com/github/sue445/app-stat-api/badges/coverage.svg)](https://codeclimate.com/github/sue445/app-stat-api/coverage)
 
