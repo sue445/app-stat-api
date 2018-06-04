@@ -43,7 +43,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.2)
-    newrelic_rpm (5.1.0.344)
+    newrelic_rpm (5.2.0.345)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     onkcop (0.53.0.0)
