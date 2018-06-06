@@ -4,11 +4,11 @@ describe "config/countries.yml" do # rubocop:disable RSpec/DescribeClass
   countries = YAML.load_file("#{app_dir}/config/countries.yml").map {|c| c["code"] }.reject {|code| code == "us" }
 
   countries.each do |country|
-    it "https://www.apple.com/#{country}/support/systemstatus/ is available" do
-      http = Net::HTTP.new("www.apple.com", 443)
-      http.use_ssl = true
-      response = http.head("/#{country}/support/systemstatus/")
-      expect(response.code).to eq "200"
+    url = "https://www.apple.com/#{country}/support/systemstatus/"
+
+    it "#{url} is available" do
+      status_code = `curl -s -I #{url} | grep 'HTTP/1.1'`.strip
+      expect(status_code).to match /200 OK$/
     end
   end
 end
