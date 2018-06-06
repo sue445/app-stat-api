@@ -13,7 +13,7 @@ gem "puma-heroku"
 gem "puma_worker_killer"
 gem "rollbar"
 gem "sinatra", ">= 2.0.0"
-gem "sinatra-contrib", ">= 2.0.0"
+gem "sinatra-contrib", ">= 2.0.0", github: "sinatra/sinatra", branch: "fix-1441" # https://github.com/sinatra/sinatra/issues/1441#issuecomment-395141272
 gem "slim"
 
 group :development do
