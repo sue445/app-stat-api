@@ -71,7 +71,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
-    rollbar (2.16.4)
+    rollbar (2.17.0)
       multi_json
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
