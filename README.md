@@ -10,7 +10,7 @@ https://app-stat-api.herokuapp.com/
 ## Requirements
 * Ruby
 * [memcached](http://memcached.org/)
-* Headless Chrome
+* [Phantomjs](http://phantomjs.org/) (recommended v1.9.8+)
 
 ## Setup
 ```sh
