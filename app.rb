@@ -56,8 +56,7 @@ class App < Sinatra::Base
 
     def fetch_apple_system_status(country)
       fetch_cache(country) do
-        chrome_options_args = AppleSystemStatus::Crawler::DEFAULT_CHROME_OPTIONS_ARGS + %w[disable-dev-shm-usage]
-        AppleSystemStatus::Crawler.perform(country: country, chrome_options_args: chrome_options_args, chrome_options_binary: ENV["GOOGLE_CHROME_SHIM"])
+        AppleSystemStatus::Crawler.perform(country: country)
       end
     end
 
