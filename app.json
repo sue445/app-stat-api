@@ -19,6 +19,9 @@
       "description": "puma workers count",
       "value": "1",
       "required": false
+    },
+    "GOOGLE_CHROME_SHIM": {
+      "value": "/app/.apt/usr/bin/google-chrome"
     }
   },
   "addons": [
