@@ -1,4 +1,7 @@
-version: 2.0
+version: 2.1
+
+orbs:
+  sue445-bundle-install: sue445/bundle-install@0.1.0
 
 default: &default
   docker:
@@ -25,11 +28,8 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: .circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - sue445-bundle-install/bundle-install:
+          cache_key_prefix: "v2-bundle"
       - run: bundle exec rspec
       - run: bundle exec codeclimate-test-reporter
 
@@ -38,11 +38,8 @@ jobs:
 
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: .circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
+      - sue445-bundle-install/bundle-install:
+          cache_key_prefix: "v2-bundle"
       - run: bundle exec rubocop
 
   deploy:
