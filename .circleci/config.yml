@@ -1,49 +1,40 @@
 version: 2.1
 
 orbs:
-  sue445-bundle-install: sue445/bundle-install@0.1.0
+  ruby-orbs: sue445/ruby-orbs@volatile
+  heroku:    circleci/heroku@0.0.2
 
-default: &default
-  docker:
-    - image: circleci/ruby:2.5.3-browsers-legacy
-      environment:
-        RACK_ENV: test
-        CODECLIMATE_REPO_TOKEN: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
-    - image: memcached:1.5-alpine
-  working_directory: ~/app
+executors:
+  default:
+    docker:
+      - image: circleci/ruby:2.5.3-browsers-legacy
+        environment:
+          RACK_ENV: test
+          CODECLIMATE_REPO_TOKEN: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
+      - image: memcached:1.5-alpine
+    working_directory: ~/app
 
 jobs:
   rspec:
-    <<: *default
+    executor:
+      name: default
 
     steps:
       - checkout
-      - sue445-bundle-install/bundle-install:
+      - ruby-orbs/bundle-install:
           cache_key_prefix: "v2-bundle"
       - run: bundle exec rspec
       - run: bundle exec codeclimate-test-reporter
 
   rubocop:
-    <<: *default
+    executor:
+      name: default
 
     steps:
       - checkout
-      - sue445-bundle-install/bundle-install:
+      - ruby-orbs/bundle-install:
           cache_key_prefix: "v2-bundle"
       - run: bundle exec rubocop
-
-  deploy:
-    docker:
-      - image: sue445/heroku-cli
-    working_directory: /home/circleci/app
-
-    steps:
-      - checkout
-      - run: .circleci/heroku_setup.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "9a:82:fa:fa:35:d4:ea:5f:c5:27:ae:ee:ad:e7:33:5b"
-      - run: .circleci/heroku_deploy.sh
 
 workflows:
   version: 2
@@ -52,7 +43,7 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - deploy:
+      - heroku/deploy-via-git:
           context: Heroku
           requires:
             - rspec
