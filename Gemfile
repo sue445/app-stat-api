@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "2.5.3"
 
 gem "activesupport", require: "active_support/all"
-gem "apple_system_status", "< 1.0.0" # TODO: Upgrade to v1.0.0
+gem "apple_system_status", ">= 1.0.3"
 gem "dalli"
 gem "global"
 gem "jemalloc", require: false
