@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   ruby-orbs: sue445/ruby-orbs@volatile
+  heroku:    circleci/heroku@0.0.2
 
 executors:
   default:
@@ -35,19 +36,6 @@ jobs:
           cache_key_prefix: "v2-bundle"
       - run: bundle exec rubocop
 
-  deploy:
-    docker:
-      - image: sue445/heroku-cli
-    working_directory: /home/circleci/app
-
-    steps:
-      - checkout
-      - run: .circleci/heroku_setup.sh
-      - add_ssh_keys:
-          fingerprints:
-            - "9a:82:fa:fa:35:d4:ea:5f:c5:27:ae:ee:ad:e7:33:5b"
-      - run: .circleci/heroku_deploy.sh
-
 workflows:
   version: 2
 
@@ -55,7 +43,7 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - deploy:
+      - heroku/deploy-via-git:
           context: Heroku
           requires:
             - rspec
