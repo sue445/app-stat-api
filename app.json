@@ -6,10 +6,6 @@
   "keywords": ["ruby", "Apple", "API"],
   "env": {
     "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-multi",
-    "BUNDLE_WITHOUT": {
-      "description": "bundle install --without <these>",
-      "value": "test:development"
-    },
     "MAX_THREADS": {
       "description": "puma threads count",
       "value": "5",
