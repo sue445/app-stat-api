@@ -4,13 +4,34 @@ orbs:
   ruby-orbs: sue445/ruby-orbs@volatile
   heroku:    circleci/heroku@0.0.2
 
+commands:
+  with-cc-test-reporter:
+    description: "Run test with cc-test-reporter"
+
+    parameters:
+      steps:
+        type: steps
+        default: []
+        description: "Run steps between `before-build` and `after-build`"
+
+    steps:
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run: ./cc-test-reporter before-build
+      - steps: << parameters.steps >>
+      - run: ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+
 executors:
   default:
     docker:
       - image: circleci/ruby:2.5.3-browsers-legacy
         environment:
           RACK_ENV: test
-          CODECLIMATE_REPO_TOKEN: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
+          CC_TEST_REPORTER_ID: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
       - image: memcached:1.5-alpine
     working_directory: ~/app
 
@@ -23,8 +44,9 @@ jobs:
       - checkout
       - ruby-orbs/bundle-install:
           cache_key_prefix: "v2-bundle"
-      - run: bundle exec rspec
-      - run: bundle exec codeclimate-test-reporter
+      - with-cc-test-reporter:
+          steps:
+            - run: bundle exec rspec
 
   rubocop:
     executor:
