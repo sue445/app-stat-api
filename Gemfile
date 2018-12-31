@@ -1,12 +1,11 @@
 source "https://rubygems.org"
 
-ruby "2.5.3"
+ruby "2.6.0"
 
 gem "activesupport", require: "active_support/all"
 gem "apple_system_status", "< 1.0.0" # TODO: Upgrade to v1.0.0
 gem "dalli"
 gem "global"
-gem "jemalloc", require: false
 gem "newrelic_rpm"
 gem "puma"
 gem "puma-heroku"
