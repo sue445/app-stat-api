@@ -30,7 +30,7 @@ commands:
 executors:
   default:
     docker:
-      - image: circleci/ruby:2.6.0-browsers-legacy
+      - image: circleci/ruby:2.6.1-browsers-legacy
         environment:
           RACK_ENV: test
           CC_TEST_REPORTER_ID: 4b2a7d452fe78268da978f159e06bfe6a7749aeb875ab3d93ca37dfc799bd3dc
