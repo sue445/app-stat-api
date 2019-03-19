@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.6.1"
+ruby "2.6.2"
 
 gem "activesupport", require: "active_support/all"
 gem "apple_system_status", "< 1.0.0" # TODO: Upgrade to v1.0.0
