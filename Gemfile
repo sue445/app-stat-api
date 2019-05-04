@@ -20,6 +20,7 @@ gem "slim"
 group :development do
   gem "foreman", require: false
   gem "onkcop", require: false
+  gem "rubocop-performance", require: false
 end
 
 group :test do

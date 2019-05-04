@@ -93,6 +93,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.6)
+    rubocop-performance (1.1.0)
+      rubocop (>= 0.67.0)
     rubocop-rspec (1.32.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.0)
@@ -149,6 +151,7 @@ DEPENDENCIES
   rack-test
   rollbar
   rspec
+  rubocop-performance
   simplecov
   sinatra (>= 2.0.0)
   sinatra-contrib (>= 2.0.0)
