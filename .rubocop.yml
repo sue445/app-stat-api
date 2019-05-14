@@ -9,3 +9,9 @@ AllCops:
   TargetRubyVersion: 2.6
   # uncomment if use rails cops
   # TargetRailsVersion: 5.1
+
+Layout/IndentFirstArrayElement:
+  EnforcedStyle: consistent
+
+Layout/IndentFirstHashElement:
+  EnforcedStyle: consistent
