@@ -10,6 +10,9 @@ AllCops:
   # uncomment if use rails cops
   # TargetRailsVersion: 5.1
 
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
 Layout/IndentFirstArrayElement:
   EnforcedStyle: consistent
 
