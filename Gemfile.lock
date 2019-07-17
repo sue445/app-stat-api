@@ -76,7 +76,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
-    regexp_parser (1.5.1)
+    regexp_parser (1.6.0)
     rollbar (2.21.0)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
