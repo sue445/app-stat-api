@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.3"
+ruby "2.6.4"
 
 gem "activesupport", require: "active_support/all"
 gem "apple_system_status", "< 1.0.0" # TODO: Upgrade to v1.0.0
