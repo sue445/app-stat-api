@@ -8,7 +8,9 @@ describe "config/countries.yml" do # rubocop:disable RSpec/DescribeClass
       http = Net::HTTP.new("www.apple.com", 443)
       http.use_ssl = true
       response = http.head("/#{country}/support/systemstatus/")
-      expect(response.code).to eq "200"
+
+      # NOTE: https://www.apple.com/cn/support/systemstatus/ is redirected to https://www.apple.com.cn/cn/support/systemstatus/
+      expect(response.code).to be_in ["200", "301"]
     end
   end
 end
