@@ -44,7 +44,7 @@ GEM
       ffi (~> 1.0)
     global (1.1.0)
       activesupport (>= 2.0)
-    i18n (1.7.1)
+    i18n (1.8.1)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     json (2.3.0)
