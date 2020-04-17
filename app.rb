@@ -28,8 +28,7 @@ class App < Sinatra::Base
 
   before do
     Global.configure do |config|
-      config.environment = ENV["RACK_ENV"]
-      config.config_directory = "#{__dir__}/config/global"
+      config.backend :filesystem, environment: ENV["RACK_ENV"], path: "#{__dir__}/config/global"
     end
   end
 
