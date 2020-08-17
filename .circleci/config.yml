@@ -4,6 +4,7 @@ orbs:
   codeclimate: sue445/codeclimate@volatile
   ruby-orbs:   sue445/ruby-orbs@volatile
   heroku:      circleci/heroku@0.0.2
+  slack:       circleci/slack@volatile
 
 executors:
   default:
@@ -28,6 +29,7 @@ jobs:
           after_build_args: '--coverage-input-type simplecov'
           steps:
             - run: bundle exec rspec
+      - slack/notify-on-failure
 
   rubocop:
     executor:
@@ -38,6 +40,13 @@ jobs:
       - ruby-orbs/bundle-install:
           cache_key_prefix: "v3-bundle"
       - run: bundle exec rubocop
+      - slack/notify-on-failure
+
+  notify:
+    executor: slack/alpine
+
+    steps:
+      - slack/status
 
 workflows:
   version: 2
@@ -46,11 +55,16 @@ workflows:
     jobs:
       - rspec
       - rubocop
-      - heroku/deploy-via-git:
-          context: Heroku
+      - notify:
           requires:
             - rspec
             - rubocop
+      - heroku/deploy-via-git:
+          context: Heroku
+          requires:
+            - notify
+          post-deploy:
+            - slack/status
           filters:
             branches:
               only: master
