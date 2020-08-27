@@ -58,4 +58,4 @@ workflows:
             - slack/status
           filters:
             branches:
-              only: feature/update-heroku-orb
+              only: master
