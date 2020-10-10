@@ -29,7 +29,9 @@ jobs:
           after_build_args: '--coverage-input-type simplecov'
           steps:
             - run: bundle exec rspec
-      - slack/status
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
   rubocop:
     executor:
@@ -40,7 +42,9 @@ jobs:
       - ruby-orbs/bundle-install:
           cache_key_prefix: "v3-bundle"
       - run: bundle exec rubocop
-      - slack/status
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
 
 workflows:
   version: 2
@@ -55,7 +59,9 @@ workflows:
             - rspec
             - rubocop
           post-deploy:
-            - slack/status
+            - slack/notify:
+                event: fail
+                template: basic_fail_1
           filters:
             branches:
               only: master
