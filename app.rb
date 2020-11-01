@@ -70,7 +70,7 @@ class App < Sinatra::Base
     end
 
     def logger
-      @logger ||= Logger.new(STDOUT)
+      @logger ||= Logger.new($stdout)
     end
   end
 end
