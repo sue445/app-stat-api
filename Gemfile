@@ -27,6 +27,7 @@ group :development do
   # gem "onkcop", ">= 0.53.0.3", require: false
   gem "onkcop", require: false, github: "sue445/onkcop", branch: "develop"
 
+  gem "rubocop_auto_corrector", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rspec", ">= 2.0.0.pre", require: false
 end
