@@ -64,7 +64,7 @@ class App < Sinatra::Base
 
       path = "/#{country}/services"
       path << ".json" if format == :json
-      path << "?" + args.to_query unless args.values.reject(&:blank?).empty?
+      path << "?#{args.to_query}" unless args.values.reject(&:blank?).empty?
 
       path
     end
