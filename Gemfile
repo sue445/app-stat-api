@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.2"
+ruby "3.0.0"
 
 gem "activesupport", require: "active_support/all"
 gem "apple_system_status", "< 1.0.0" # TODO: Upgrade to v1.0.0
@@ -13,8 +13,8 @@ gem "poltergeist", ">= 1.18.1"
 gem "puma"
 gem "puma_worker_killer"
 gem "rollbar"
-gem "sinatra", ">= 2.0.0"
-gem "sinatra-contrib", ">= 2.0.0"
+gem "sinatra", ">= 2.1.0"
+gem "sinatra-contrib", ">= 2.1.0"
 gem "slim"
 
 group :development do
