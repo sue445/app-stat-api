@@ -13,8 +13,8 @@ gem "poltergeist", ">= 1.18.1"
 gem "puma"
 gem "puma_worker_killer"
 gem "rollbar"
-gem "sinatra", ">= 2.0.0"
-gem "sinatra-contrib", ">= 2.0.0"
+gem "sinatra", ">= 2.1.0"
+gem "sinatra-contrib", ">= 2.1.0"
 gem "slim"
 
 group :development do
