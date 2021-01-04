@@ -44,7 +44,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     newrelic_rpm (6.14.0)
     nio4r (2.5.4)
-    nokogiri (1.11.0.rc4)
+    nokogiri (1.11.0)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     onkcop (1.0.0.0)
