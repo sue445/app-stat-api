@@ -34,7 +34,7 @@ GEM
       ffi (~> 1.0)
     global (2.0.0)
       activesupport (>= 2.0)
-    i18n (1.8.9)
+    i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     mini_mime (1.0.3)
     mini_portile2 (2.5.0)
