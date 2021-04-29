@@ -37,7 +37,7 @@ GEM
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     mini_mime (1.1.0)
-    mini_portile2 (2.5.0)
+    mini_portile2 (2.5.1)
     minitest (5.14.4)
     multi_json (1.15.0)
     mustermann (1.1.1)
