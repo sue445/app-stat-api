@@ -1,0 +1,24 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 99
+  assignees:
+  - sue445
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: simplecov
+    versions:
+    - ">= 0.18.a, < 0.19"
+  - dependency-name: simplecov
+    versions:
+    - ">= 0.19.a, < 0.20"
+  - dependency-name: nio4r
+    versions:
+    - 2.5.5
+  - dependency-name: rspec-support
+    versions:
+    - 3.10.2
