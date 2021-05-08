@@ -9,16 +9,3 @@ updates:
   assignees:
   - sue445
   versioning-strategy: lockfile-only
-  ignore:
-  - dependency-name: simplecov
-    versions:
-    - ">= 0.18.a, < 0.19"
-  - dependency-name: simplecov
-    versions:
-    - ">= 0.19.a, < 0.20"
-  - dependency-name: nio4r
-    versions:
-    - 2.5.5
-  - dependency-name: rspec-support
-    versions:
-    - 3.10.2
