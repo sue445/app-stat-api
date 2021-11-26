@@ -14,7 +14,7 @@ describe App do
       last_response
     end
 
-    let(:country) { "us" }
+    let(:country) { "jp" }
 
     it { should be_ok }
   end
@@ -25,7 +25,7 @@ describe App do
       last_response
     end
 
-    let(:country) { "us" }
+    let(:country) { "jp" }
 
     it { should be_ok }
   end
