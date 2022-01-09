@@ -32,7 +32,7 @@ GEM
     foreman (0.87.2)
     get_process_mem (0.2.7)
       ffi (~> 1.0)
-    global (2.0.0)
+    global (2.1.0)
       activesupport (>= 2.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
