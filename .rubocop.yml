@@ -20,3 +20,6 @@ Layout/FirstArrayElementIndentation:
 
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
+
+Style/FetchEnvVar:
+  Enabled: false
